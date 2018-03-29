@@ -9,7 +9,6 @@ Page({
     },
 
     onShow: function () {
-        var that = this;
         this.setData({
             codes:''
         })
@@ -21,7 +20,11 @@ Page({
             })
             n++;
             console.log(this.data.codes)
+            if (this.data.codes == this.data.tpl) {
+                clearInterval(timer)
+            }
         },100)
+        
     },
 
     print(){
